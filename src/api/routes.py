@@ -8,11 +8,13 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+from flask_cors import CORS
+
 
 api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
-#CORS(api)
+CORS(api)
 
 # Create a route to authenticate your users and return JWTs. The
 # create_access_token() function is used to actually generate the JWT.
